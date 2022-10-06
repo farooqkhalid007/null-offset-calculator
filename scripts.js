@@ -36,7 +36,7 @@
             $jq('.memberList .member').each(function(){
                 var country = $jq(this).attr('data-country-id');
                 var people = $jq(this).attr('data-people');
-                var emissions = climateSrcData[country][0]['emm'] * people;
+                var emissions = climateSrcData[country][0]['emm'] * people / 12;
                 
                 totalEmissions = totalEmissions + emissions;
                 totalPrice = totalPrice + (pricePerCarbonUnit * emissions);
